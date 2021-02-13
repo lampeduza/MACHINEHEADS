@@ -1,0 +1,207 @@
+.header {
+  padding-bottom: 22px;
+}
+
+.header__wrapper {
+  position: relative;
+}
+
+.header__top {
+  display: flex;
+  align-items: center;
+  background-color: #efefef;
+  margin: 0 -20px 22px -20px;
+  padding: 14px 20px 11px 20px;
+}
+
+.header__toggle {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin-right: 20px;
+  border: none;
+  background-color: transparent;
+}
+
+.header__toggle-line {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 1.94px;
+  background-color: #1a1918;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    left: 0;
+    background-color: #1a1918;
+  }
+
+  &::before {
+    top: -7.42px;
+  }
+
+  &::after {
+    top: 7.42px;
+  }
+}
+
+.header--opened .header__toggle-line {
+  background-color: transparent;
+
+  &::before,
+  &::after {
+    top: 1px;
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+}
+
+.header--nojs .header__toggle {
+  display: none;
+}
+
+.header--opened .navigation {
+  display: flex;
+}
+
+.header--opened .navigation__link:hover {
+  background-color: black;
+  color: white;
+}
+
+.header--nojs .navigation {
+  display: flex;
+  position: static;
+  margin-left: 0;
+}
+
+.header--nojs .navigation__link {
+  padding: 7px 0;
+}
+
+/* hidden elements */
+.header__city,
+.header__dealer,
+.header__number,
+.header__feedback {
+  display: none;
+}
+
+.header__city-title {
+  font-size: 14px;
+  line-height: 13.93px;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+  margin-right: auto;
+}
+
+.header__middle {
+  margin-bottom: 20px;
+}
+
+.header__logo {
+  display: block;
+}
+
+@media (min-width: $mobile-width-480) {
+  .header__middle {
+    display: flex;
+  }
+}
+
+@media (min-width: $tablet-width-768) {
+  .header {
+    padding-bottom: 32px;
+  }
+
+  .header__top {
+    padding: 14px 30px 11px;
+    margin: 0 -30px 32px;
+  }
+
+  .header__number,
+  .header__feedback {
+    display: block;
+  }
+
+  .header__number {
+    color: #1a1918;
+    font-weight: 550;
+  }
+
+  .header__feedback {
+    margin-left: 22px;
+    font-size: 14px;
+    line-height: 16.8px;
+    color: #1a1918;
+    border: 1px solid #1a1918;
+    padding: 6px 8px;
+    width: 152px;
+    text-align: center;
+  }
+
+  .header__logo {
+    width: 246px;
+    height: 46px;
+  }
+
+  .header__middle {
+    margin-bottom: 28px;
+  }
+}
+
+@media (min-width: $tablet-width-1024) {
+  .header {
+    padding-bottom: 37px;
+  }
+
+  .header__toggle {
+    display: none;
+  }
+
+  .header__city-title {
+    margin-right: 30px;
+  }
+
+  .header__dealer,
+  .header__city {
+    display: block;
+    font-size: 14px;
+    line-height: 16.8px;
+    color: #535353;
+  }
+
+  .header__city {
+    margin-right: 8px;
+  }
+
+  .header__number {
+    margin-left: auto;
+  }
+}
+
+@media (min-width: $desktop-width-1280) {
+  .header__top {
+    margin: 0 -50px 32px;
+  }
+
+  .header__middle {
+    margin-bottom: 25px;
+  }
+
+  .header__logo {
+    width: 278px;
+    height: 52px;
+  }
+}

@@ -1,0 +1,49 @@
+.user-navigation {
+  @include reset-list;
+}
+/* a hidden element */
+.user-navigation__item {
+  font-size: 14px;
+  line-height: 16.8px;
+  &:last-child {
+    display: none;
+  }
+}
+
+.user-navigation__link {
+  color: inherit;
+}
+
+@media (min-width: $mobile-width-480) {
+  .user-navigation {
+    display: flex;
+  }
+  .user-navigation__item {
+
+    &:first-child {
+      position: relative;
+      margin-right: 8px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -8px;
+        width: 1px;
+        height: 17px;
+        background-image: url(../img/icons/stripe.svg);
+      }
+    }
+
+    &:last-child {
+      display: block;
+      margin-left: 8px;
+    }
+  }
+}
+
+@media (min-width: $tablet-width-768) {
+  .user-navigation {
+    margin-left: 22px;
+  }
+}

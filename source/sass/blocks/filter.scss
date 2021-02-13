@@ -1,0 +1,217 @@
+.filter {
+  margin-bottom: 32px;
+}
+
+.filter__button {
+  display: block;
+  width: 100%;
+  color: #535353;
+  padding: 19px 30px 18px;
+  margin-bottom: 22px;
+  font-size: 14px;
+  line-height: 16.8px;
+  border: none;
+  background-color: #f9f9f9;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+  }
+
+  &::before {
+    width: 25px;
+    height: 20.53px;
+    background-image: url(../img/icons/filter.svg);
+    left: 30px;
+  }
+
+  &::after {
+    width: 10px;
+    height: 4.75px;
+    background-image: url(../img/icons/expand.svg);
+    right: 30px;
+  }
+}
+
+/* a group of hidden elements */
+.filter__list,
+.filter__result,
+.filter__pagination-show {
+  display: none;
+}
+
+.filter__additional {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter__mode-list {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+}
+
+.filter__mode-item:not(:last-child) {
+  margin-right: 13px;
+}
+.filter__mode-view {
+  padding: 0;
+  border: none;
+  display: flex;
+}
+
+.filter__pagination-list {
+  @include reset-list;
+  display: flex;
+}
+
+.filter__pagination-item {
+  border: 1px solid #535353;
+
+  &:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  &:last-child {
+    display: none;
+  }
+}
+
+.filter__pagination-pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 13.93px;
+  width: 30px;
+  padding: 8px 2px 6px 2px;
+  height: auto;
+  color: #1a1918;
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+
+  &--current {
+    color: #fff;
+    background-color: #000;
+  }
+
+  &--current:focus,
+  &--current:active {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+@media (min-width: $mobile-width-480) {
+  .filter__additional {
+    justify-content: flex-start;
+  }
+  .filter__result {
+    display: block;
+    font-size: 14px;
+    line-height: 16.8px;
+    margin-right: 32px;
+  }
+
+  .filter__number {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+
+  .filter__mode {
+    margin-left: auto;
+  }
+
+  .filter__pagination-item {
+
+    &:first-child {
+      display: none;
+    }
+
+    &:last-child {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: $tablet-width-768) {
+  .filter__button {
+    display: none;
+  }
+
+  .filter__list {
+    @include reset-list;
+    display: flex;
+    margin-bottom: 28px;
+  }
+
+  .filter__item {
+    margin-right: 2.259%;
+    width: 23.305%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .filter__option {
+    width: 100%;
+    color: #535353;
+    font-size: 16px;
+    line-height: 15.81px;
+    padding: 15px 0 15px 10px;
+    border: none;
+    border-bottom: 1px solid #818181;
+  }
+
+  .filter__additional {
+    align-items: center;
+  }
+
+  .filter__pagination {
+    display: flex;
+    align-items: center;
+  }
+
+  .filter__pagination-show {
+    display: block;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    line-height: 16.8px;
+  }
+}
+
+@media (min-width: $tablet-width-1024) {
+  .filter__item {
+    width: 23.26%;
+    margin-right: 2.9%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (min-width: $desktop-width-1280) {
+  .filter__item {
+    width: 23.58%;
+    margin-right: 1.9%;
+  }
+
+  .filter__option {
+    font-size: 18px;
+    line-height: 17.78px;
+    padding: 14px 0 14px 10px;
+  }
+}
